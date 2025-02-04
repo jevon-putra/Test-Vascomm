@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#002060</color>
+    <color name="color_primary_transparent">#CC002060</color>
+
+    <color name="color_secondary">#00D9D5</color>
+
+    <color name="badge_green">#B3FFCB</color>
+    <color name="green_stock">#007025</color>
+    <color name="orange_price">#FF7200</color>
+
+    <color name="color_title">#000F2E</color>
+    <color name="color_message">#597393</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="black">#5F5F5F</color>
+    <color name="grey_border">#E8E8E8</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#EB0004</color>
+    <color name="green_success">#2FAF52</color>
+</resources>
