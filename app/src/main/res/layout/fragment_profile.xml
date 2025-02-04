@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.profile.view.ProfileFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F8FA"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:padding="2dp"
+                android:background="@drawable/bg_white_rounded"
+                android:orientation="horizontal"
+                android:elevation="2dp">
+                <TextView
+                    android:id="@+id/tv_profile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="Profile Saya"
+                    style="@style/font_12_semi_bold"
+                    android:background="@drawable/bg_green_rounded"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_primary"/>
+
+                <TextView
+                    android:id="@+id/tv_setting"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Pengaturan"
+                    style="@style/font_12_semi_bold"
+                    android:background="@drawable/bg_white_rounded"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_primary"/>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/color_primary">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="112dp"
+                                android:background="@drawable/img_footer"
+                                android:padding="16dp"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/holder_image"
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    app:cardCornerRadius="36dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="1dp"
+                                    app:strokeColor="@color/grey_border">
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="8dp"
+                                        android:src="@drawable/logo_vascoom"/>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Angga "
+                                            style="@style/font_16_bold"
+                                            android:textColor="@color/white"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Praja"
+                                            style="@style/font_16_regular"
+                                            android:textColor="@color/white"/>
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Membership BBLK"
+                                        style="@style/font_12_medium"
+                                        android:textColor="@color/white"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lengkapi profile anda untuk memaksimalkan penggunaan aplikasi"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="8dp"
+                                android:background="@drawable/bg_profile_rounder"
+                                style="@style/font_12_regular"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:orientation="vertical"
+                        android:clipToPadding="false"
+                        android:clipChildren="false">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="Nama Depan" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp">
+                            <EditText
+                                android:id="@+id/et_first_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                style="@style/font_14_regular"
+                                android:background="@null"
+                                android:hint="Masukkan email anda"
+                                android:inputType="text"
+                                android:imeOptions="actionNext"
+                                android:textColor="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="Nama Belakang" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp">
+                            <EditText
+                                android:id="@+id/et_last_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                style="@style/font_14_regular"
+                                android:background="@null"
+                                android:hint="Masukkan email anda"
+                                android:inputType="text"
+                                android:imeOptions="actionNext"
+                                android:textColor="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="Email" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp">
+                            <EditText
+                                android:id="@+id/et_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                style="@style/font_14_regular"
+                                android:background="@null"
+                                android:hint="Masukkan email anda"
+                                android:inputType="text"
+                                android:imeOptions="actionNext"
+                                android:textColor="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="No. Telpon" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp">
+
+                            <EditText
+                                android:id="@+id/et_phone"
+                                style="@style/font_14_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="Masukkan nomot telpon anda"
+                                android:imeOptions="actionNext"
+                                android:inputType="phone"
+                                android:padding="16dp"
+                                android:textColor="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="No. KTP" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp">
+                            <EditText
+                                android:id="@+id/et_no_ktp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                style="@style/font_14_regular"
+                                android:background="@null"
+                                android:hint="Masukkan No. KTP anda"
+                                android:inputType="number"
+                                android:imeOptions="actionNext"
+                                android:textColor="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:drawableTint="@color/color_primary"
+                            android:drawableStart="@drawable/ic_info"
+                            android:drawablePadding="8dp"
+                            android:text="Pastikan profile anda terisi dengan benar, data pribadi anda terjamin keamanannya"
+                            android:textColor="#6A6A6A"
+                            style="@style/font_12_regular"/>
+
+                        <Button
+                            android:id="@+id/btn_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:text="Simpan Profile"
+                            style="@style/button_primary"
+                            android:drawableTint="@color/white"
+                            android:drawableEnd="@drawable/ic_save"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center"
+                android:background="@drawable/img_footer">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Ingin mendapat update dari kami ?"
+                    android:layout_marginEnd="16dp"
+                    style="@style/font_16_semi_bold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dapatkan\nNotifikasi"
+                    style="@style/font_14_regular"
+                    android:textColor="@color/white"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    app:drawableEndCompat="@drawable/ic_arrow_right" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
