@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_hospital_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:maxLines="2"
+                android:ellipsize="end"
+                style="@style/font_14_semi_bold"
+                android:text="PCR Swab Test (Drive Thru) Hasil 1 Hari Kerja"
+                android:textColor="@color/color_primary"/>
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_above="@id/tv_location"
+                android:layout_below="@id/tv_hospital_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:ellipsize="end"
+                style="@style/font_14_semi_bold"
+                android:text="Rp 10.000"
+                android:textColor="@color/orange_price"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/tv_address"
+                android:text="Lenmarc Surabaya"
+                style="@style/font_14_medium"
+                android:drawablePadding="4dp"
+                android:textColor="@color/black"
+                app:drawableStartCompat="@drawable/ic_hospital" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:text="Lenmarc Surabaya"
+                style="@style/font_12_regular"
+                android:drawablePadding="4dp"
+                android:textColor="@color/color_message"
+                app:drawableStartCompat="@drawable/ic_location" />
+        </RelativeLayout>
+        
+        <ImageView
+            android:id="@+id/iv_hospital"
+            android:layout_width="120dp"
+            android:layout_height="152dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_sample_hospital_1"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
