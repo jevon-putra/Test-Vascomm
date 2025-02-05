@@ -56,9 +56,9 @@ class LoginFragment : BaseFragment() {
             }
 
             btnLogin.setOnClickListener{
-                if(etEmail.toString().length < 5) {
+                if(etEmail.text.toString().length < 5) {
                     showFailedToast("Email tidak valid")
-                } else if(etPassword.toString().length < 5){
+                } else if(etPassword.text.toString().length < 5){
                     showFailedToast("Password minimal 6 karakter")
                 } else {
                     loginVM.doLogin(etEmail.text.toString(), etPassword.text.toString())
