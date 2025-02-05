@@ -91,7 +91,7 @@ class MenuEventAdapter(private val context: Context, private val listener: MenuE
     override fun onBindViewHolder(holder: MenuEventViewHolder, position: Int) {
         holder.apply {
             val menuEvent: MenuEvent = menuEvents[position]
-            holder.bind(menuEvent!!, listener)
+            holder.bind(menuEvent, listener)
         }
     }
 

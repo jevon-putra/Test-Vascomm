@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class SplashFragment : BaseFragment() {
     private lateinit var binding: FragmentSplashBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
     }

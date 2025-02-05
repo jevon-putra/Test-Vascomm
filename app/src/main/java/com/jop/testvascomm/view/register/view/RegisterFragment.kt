@@ -23,7 +23,7 @@ class RegisterFragment : BaseFragment() {
     private var hidePassword: Boolean = true
     private var hidePasswordConfirmation: Boolean = true
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
