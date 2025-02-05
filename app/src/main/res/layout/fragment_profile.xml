@@ -279,7 +279,7 @@
                                 android:padding="16dp"
                                 style="@style/font_14_regular"
                                 android:background="@null"
-                                android:hint="Masukkan email anda"
+                                android:hint="Masukkan nama depan anda"
                                 android:inputType="text"
                                 android:imeOptions="actionNext"
                                 android:textColor="@color/black" />
@@ -307,7 +307,7 @@
                                 android:padding="16dp"
                                 style="@style/font_14_regular"
                                 android:background="@null"
-                                android:hint="Masukkan email anda"
+                                android:hint="Masukkan nama belakang anda"
                                 android:inputType="text"
                                 android:imeOptions="actionNext"
                                 android:textColor="@color/black" />

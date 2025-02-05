@@ -38,8 +38,8 @@
             app:destination="@id/registerFragment"
             app:enterAnim="@anim/to_right"
             app:exitAnim="@anim/to_left"
-            app:popEnterAnim="@anim/from_right"
-            app:popExitAnim="@anim/from_left" />
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/from_right"/>
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"

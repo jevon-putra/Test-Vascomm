@@ -139,7 +139,7 @@
                         android:padding="16dp"
                         style="@style/font_14_regular"
                         android:background="@null"
-                        android:hint="Masukkan email anda"
+                        android:hint="Masukkan password anda"
                         android:inputType="textPassword"
                         android:imeOptions="actionDone"
                         android:textColor="@color/black" />

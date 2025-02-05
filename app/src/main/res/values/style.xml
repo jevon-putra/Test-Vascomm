@@ -107,8 +107,7 @@
 
     // BUTTON
     <style name="button_logout">
-        <item name="android:elevation">0dp</item>
-        <item name="elevation">0dp</item>
+        <item name="android:elevation">2dp</item>
         <item name="lineSpacing">1dp</item>
         <item name="android:background">@drawable/btn_logout</item>
         <item name="backgroundTint">@null</item>
@@ -124,8 +123,7 @@
 
 
     <style name="button_primary">
-        <item name="android:elevation">0dp</item>
-        <item name="elevation">0dp</item>
+        <item name="android:elevation">2dp</item>
         <item name="lineSpacing">1dp</item>
         <item name="android:background">@drawable/btn_primary</item>
         <item name="backgroundTint">@null</item>
