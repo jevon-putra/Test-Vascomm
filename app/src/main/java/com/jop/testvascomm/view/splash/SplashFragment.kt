@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jop.testvascomm.R
-import com.jop.testvascomm.data.local.AppData
 import com.jop.testvascomm.databinding.FragmentSplashBinding
 import com.jop.testvascomm.ui.BaseFragment
-import com.jop.testvascomm.view.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -29,9 +27,13 @@ class SplashFragment : BaseFragment() {
             delay(1500)
             appData.getToken().let {
                 if(it.isNullOrEmpty()){
-                    mainAct.navController.navigate(R.id.action_splashFragment_to_loginFragment)
+                    mainAct.navController.navigate(
+                        resId = R.id.action_splashFragment_to_loginFragment,
+                    )
                 } else {
-                    mainAct.navController.navigate(R.id.action_splashFragment_to_homeFragment)
+                    mainAct.navController.navigate(
+                        resId = R.id.action_splashFragment_to_homeFragment
+                    )
                 }
             }
         }

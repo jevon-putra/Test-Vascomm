@@ -10,12 +10,17 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.OptIn
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.jop.testvascomm.R
 import com.jop.testvascomm.data.model.Hospital
 import com.jop.testvascomm.data.model.MenuEvent
@@ -35,6 +40,7 @@ class HomeFragment : BaseFragment(), MenuEventAdapter.MenuEventAdapterListener, 
     private lateinit var filterAdapter: FilterAdapter
     private lateinit var productAdapter: ProductAdapter
     private lateinit var hospitalAdapter: HospitalAdapter
+    private lateinit var badgeDrawable: BadgeDrawable
     private var listOfMenuEvent: MutableList<MenuEvent> = mutableListOf()
     private var listOfProduct: MutableList<Product> = mutableListOf()
     private var listOfHospital: MutableList<Hospital> = mutableListOf()
@@ -67,6 +73,14 @@ class HomeFragment : BaseFragment(), MenuEventAdapter.MenuEventAdapterListener, 
             filterAdapter = FilterAdapter(this)
             filterAdapter.setData(listOfFilter)
             filterAdapter.setSelectedFilter(listOfFilter[0])
+        }
+
+        if(!::badgeDrawable.isInitialized){
+            badgeDrawable = BadgeDrawable.create(requireContext()).apply {
+                backgroundColor = ContextCompat.getColor(requireContext(), R.color.red)
+                horizontalOffset = 20
+                verticalOffset = 10
+            }
         }
 
         setupToolbar()
@@ -109,21 +123,18 @@ class HomeFragment : BaseFragment(), MenuEventAdapter.MenuEventAdapterListener, 
             ivInstagram.setOnClickListener { intentUrl("https://instagram.com/") }
 
             tvProfile.setOnClickListener {
-                val bundle = Bundle().apply {
-                    putString("type", "profile")
-                }
+                val bundle = Bundle().apply { putString("type", "profile") }
                 mainAct.navController.navigate(R.id.action_homeFragment_to_profileFragment, bundle)
             }
 
             tvSetting.setOnClickListener {
-                val bundle = Bundle().apply {
-                    putString("type", "setting")
-                }
+                val bundle = Bundle().apply { putString("type", "setting") }
                 mainAct.navController.navigate(R.id.action_homeFragment_to_profileFragment, bundle)
             }
         }
     }
 
+    @OptIn(ExperimentalBadgeUtils::class)
     private fun setupToolbar(){
         mainAct.setSupportActionBar(binding.toolbar.toolbar)
         mainAct.supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -139,6 +150,8 @@ class HomeFragment : BaseFragment(), MenuEventAdapter.MenuEventAdapterListener, 
             toolbar.toolbar.title = ""
             ivClose.setOnClickListener{ binding.drawer.closeDrawers() }
         }
+
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.toolbar.toolbar, R.id.nav_notification)
     }
 
     private fun setupButtonSelector(isSeeMore: Boolean){
