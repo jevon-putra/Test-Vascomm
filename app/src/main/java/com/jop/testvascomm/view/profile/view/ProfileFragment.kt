@@ -8,10 +8,15 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.OptIn
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.jop.testvascomm.R
 import com.jop.testvascomm.databinding.FragmentHomeBinding
 import com.jop.testvascomm.databinding.FragmentProfileBinding
@@ -19,14 +24,15 @@ import com.jop.testvascomm.ui.BaseFragment
 
 class ProfileFragment : BaseFragment(), MenuProvider {
     private lateinit var binding: FragmentProfileBinding
+    private lateinit var badgeDrawable: BadgeDrawable
     private var isProfile: Boolean = true
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    @OptIn(ExperimentalBadgeUtils::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,6 +46,14 @@ class ProfileFragment : BaseFragment(), MenuProvider {
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
+        if(!::badgeDrawable.isInitialized){
+            badgeDrawable = BadgeDrawable.create(requireContext()).apply {
+                backgroundColor = ContextCompat.getColor(requireContext(), R.color.red)
+                horizontalOffset = 20
+                verticalOffset = 10
+            }
+        }
+
         binding.apply {
             toolbar.toolbar.setNavigationOnClickListener {
                 mainAct.navController.popBackStack()
@@ -49,6 +63,8 @@ class ProfileFragment : BaseFragment(), MenuProvider {
 
             tvProfile.setOnClickListener { setupButtonSelector(true) }
             tvSetting.setOnClickListener { setupButtonSelector(false) }
+
+            BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.toolbar.toolbar, R.id.nav_notification)
         }
     }
 

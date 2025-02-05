@@ -164,9 +164,103 @@
                         android:orientation="vertical"
                         android:clipToPadding="false"
                         android:clipChildren="false">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            style="@style/font_16_semi_bold"
+                            android:textColor="@color/color_primary"
+                            android:text="Pilih data yang ingin ditampilkan" />
+                        
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="true">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="16dp"
+                                android:orientation="horizontal">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/holder_step_profile"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="0dp"
+                                    app:cardBackgroundColor="@color/color_secondary">
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_profile"
+                                        android:padding="8dp"/>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_content_step_profile"
+                                    android:layout_toEndOf="@id/holder_step_profile"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        style="@style/font_14_medium"
+                                        android:textColor="@color/color_primary"
+                                        android:text="Data Diri" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        style="@style/font_10_regular"
+                                        android:textColor="#BDBDBD"
+                                        android:text="Data diri anda sesuai KTP" />
+                                </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/holder_location"
+                                    android:layout_toEndOf="@id/ln_content_step_profile"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="0dp"
+                                    app:cardBackgroundColor="#EBEDF7">
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_location"
+                                        android:padding="8dp"
+                                        app:tint="#6A6A6A" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_content_step_address"
+                                    android:layout_toEndOf="@id/holder_location"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        style="@style/font_14_medium"
+                                        android:textColor="@color/color_primary"
+                                        android:text="Tempat Tinggal" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        style="@style/font_10_regular"
+                                        android:textColor="#BDBDBD"
+                                        android:text="Data diri anda sesuai KTP" />
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
                             style="@style/font_16_semi_bold"
                             android:textColor="@color/color_primary"
                             android:text="Nama Depan" />
